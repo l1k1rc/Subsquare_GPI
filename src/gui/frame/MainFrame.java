@@ -72,7 +72,7 @@ public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListe
 		});
 		
 		this.menuBar.add(menu_game);
-this.setJMenuBar(menuBar);
+		this.setJMenuBar(menuBar);
 		
 		getContentPane().add(api);
 		getContentPane().add(pScore);

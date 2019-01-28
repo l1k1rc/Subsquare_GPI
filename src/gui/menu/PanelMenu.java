@@ -29,9 +29,9 @@ public class PanelMenu extends JPanel {
     private static final long serialVersionUID = 1L;
     private static JFrame frame=new JFrame();
 
-	private JButton b1=new JButton("JOUER");
-    private JButton b3=new JButton("GUIDE UTILISATEUR");
-    private JButton b4=new JButton("Quitter");
+	private JButton b1=new JButton("Play");
+    private JButton b3=new JButton("User's manual");
+    private JButton b4=new JButton("Quit");
             
     private GridBagConstraints gbc = new GridBagConstraints();
     private JPanel cell1 = new JPanel();
@@ -134,7 +134,7 @@ public class PanelMenu extends JPanel {
     	frame.setTitle("Subsquare");
 		frame.setIconImage(new ImageIcon("subsquare_icon.png").getImage());		
 
-        frame.setContentPane(new PanelMenu(new ImageIcon("").getImage()));
+        frame.setContentPane(new PanelMenu(new ImageIcon("wallpaper.png").getImage()));
         frame.setSize(new Dimension(980,540));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);

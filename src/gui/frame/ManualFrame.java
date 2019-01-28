@@ -4,6 +4,11 @@ import java.awt.*;
 import javax.swing.*;
 
 public class ManualFrame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public ManualFrame(){
 		this.setTitle("User's Manual");
 		this.setSize(400, 500);

@@ -12,7 +12,7 @@ public class Scene extends JPanel{
 	public Scene() {
 		super();
 		setBorder(BorderFactory.createEtchedBorder());
-		setBackground(Color.green);
+		setBackground(Color.DARK_GRAY);
 	}
 	
 	@Override
