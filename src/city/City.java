@@ -9,7 +9,6 @@ public class City {
 	private Date date;
 	
 	public City(String name, ArrayList<District> districts, int budget, Date date) {
-		super();
 		this.name = name;
 		this.districts = districts;
 		this.budget = budget;

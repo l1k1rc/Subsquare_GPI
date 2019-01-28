@@ -6,7 +6,6 @@ public class SubwayLine {
 	private Station stationEnd;
 	
 	public SubwayLine(String name, Station stationFrom, Station stationEnd) {
-		super();
 		this.name = name;
 		this.stationFrom = stationFrom;
 		this.stationEnd = stationEnd;

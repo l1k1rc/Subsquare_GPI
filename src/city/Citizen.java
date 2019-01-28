@@ -8,7 +8,6 @@ public class Citizen {
 	private Point position;
 	
 	public Citizen(String workDistrict, String originDistrict, Point position) {
-		super();
 		this.workDistrict = workDistrict;
 		this.originDistrict = originDistrict;
 		this.position = position;
