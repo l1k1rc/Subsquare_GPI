@@ -29,7 +29,7 @@ public class PanelMenu extends JPanel {
     private static final long serialVersionUID = 1L;
     private static JFrame frame=new JFrame();
 
-	private JButton b1=new JButton("Play");
+	private JButton b1=new JButton(new ImageIcon(new ImageIcon("startgame3.png").getImage().getScaledInstance(340, 90, Image.SCALE_DEFAULT)));
     private JButton b3=new JButton("User's manual");
     private JButton b4=new JButton("Quit");
             
@@ -49,6 +49,10 @@ public class PanelMenu extends JPanel {
         
         b1.setPreferredSize(new Dimension(250, 60));
         b1.setFont(Fonts.getfMenu());
+        b1.setOpaque(false);
+        b1.setBackground(new Color(30, 170, 255, 200));
+        b1.setBorderPainted(false);
+        
         b3.setPreferredSize(new Dimension(250, 60));
         b3.setFont(Fonts.getfMenu());
         b4.setPreferredSize(new Dimension(250, 60));
