@@ -9,8 +9,8 @@ public class GridParameters {
 	 */
 	
 	/**********		constants		**********/
-	public static int HEIGHT;
-	public static int WIDTH;
+	public static int HEIGHT=40;
+	public static int WIDTH=60;
 	
 	/**********		attributs		**********/
 	private int freqObstacle;

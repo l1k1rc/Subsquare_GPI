@@ -3,6 +3,7 @@ package grid;
 import java.util.ArrayList;
 
 import engine.GridParameters;
+import used.Point;
 
 /**
  * This class contains the grid where the simulation will operate.
@@ -75,6 +76,9 @@ public class Grid {
 	public void setBoxs(Box[][] boxs){
 		this.boxs =boxs;
 	}
+	public ArrayList<Obstacle> getObstacle(){
+		return obstacle;
+	}
 	/**
 	 * gives us the Grid parameters
 	 * @return GridParameters
@@ -89,6 +93,17 @@ public class Grid {
 	}
 
 				//others
+	public boolean prefDistanceObstacle(Point p) {
+		
+		boolean isInGoodPlace=true;
+		
+		for(int i=0; i<getObstacle().size(); i++) {
+			Point p1 = getObstacle().get(i).position;
+			if(p1.distance(p) <= 2d)
+				isInGoodPlace = false;
+		}
+		return isInGoodPlace;
+	}
 	/**
 	 * add a new obstacle to the grid
 	 * @param o
