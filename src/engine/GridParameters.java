@@ -9,8 +9,8 @@ public class GridParameters {
 	 */
 	
 	/**********		constants		**********/
-	public static int HEIGHT=40;
-	public static int WIDTH=60;
+	public static int HEIGHT=22;
+	public static int WIDTH=43;
 	
 	/**********		attributs		**********/
 	private int freqObstacle;
@@ -67,5 +67,4 @@ public class GridParameters {
 		this.freqObstacle = freqObstacle;
 		this.ground = ground;
 	}
-
 }

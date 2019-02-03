@@ -62,7 +62,7 @@ public class GridBuilder {
 	public void randomPositionObstacle() {
 		int x,y;
 		Point p;
-		for(int i = 0 ; i< Random.randomInt(40, 80) ; i++ ) {
+		for(int i = 0 ; i< GridParameters.getInstance().getFreqObstacle() ; i++ ) {
 			do
 			{
 				 x= Random.randomInt(2,height-3);

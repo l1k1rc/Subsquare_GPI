@@ -1,8 +1,21 @@
 package gui.frame;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+import engine.GridParameters;
+import engine.Simulation;
 
 //import engine.Simulation;
 
@@ -10,7 +23,7 @@ public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListe
 
 	private static final long serialVersionUID = 1L;
 	private static final int THREAD_MAP = 800;
-	//private Simulation simulation;
+	private Simulation simulation;
 	private Scene scene = new Scene();
 	private PanelScore pScore = new PanelScore();
 	private PanelAPI api = new PanelAPI();
@@ -29,7 +42,9 @@ public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListe
 		setIconImage(new ImageIcon("subsquare_icon.png").getImage());		
 		setFocusable(true);
 		addKeyListener(this);
-	//	simulation = new Simulation();
+		simulation = new Simulation(GridParameters.getInstance());
+		simulation.generatGrid();
+		scene.setGrid(simulation.getGrid());
 		init();
 		launchGUI();
 	}
@@ -142,7 +157,7 @@ public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListe
 	public void run() {
 		while(!stop) {	
 			// TODO simulation method new turn
-			//simulation.simulationNextTurn();
+			simulation.simulationNextTurn();
 			updateGUI();
 			try {
 				Thread.sleep(THREAD_MAP);
