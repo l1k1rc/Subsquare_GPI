@@ -22,7 +22,7 @@ import engine.Simulation;
 public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListener{
 
 	private static final long serialVersionUID = 1L;
-	private static final int THREAD_MAP = 800;
+	private static final int THREAD_MAP = 1000;
 	private Simulation simulation;
 	private Scene scene = new Scene();
 	private PanelScore pScore = new PanelScore();
