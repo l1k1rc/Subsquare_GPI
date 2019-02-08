@@ -16,6 +16,7 @@ import javax.swing.JMenuItem;
 
 import engine.GridParameters;
 import engine.Simulation;
+import engine.TimeSimulator;
 
 //import engine.Simulation;
 
@@ -24,6 +25,7 @@ public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListe
 	private static final long serialVersionUID = 1L;
 	private static final int THREAD_MAP = 1000;
 	private Simulation simulation;
+	private TimeSimulator timeSim;
 	private Scene scene = new Scene();
 	private PanelScore pScore = new PanelScore();
 	private PanelAPI api = new PanelAPI();
@@ -44,6 +46,7 @@ public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListe
 		addKeyListener(this);
 		simulation = new Simulation(GridParameters.getInstance());
 		simulation.generatGrid();
+		timeSim = TimeSimulator.getInstance();
 		scene.setGrid(simulation.getGrid());
 		init();
 		launchGUI();
@@ -149,8 +152,15 @@ public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListe
 	public void updateGUI() {
 		// TODO repaint method of the scene
 		// TODO check new statistics ..
+		updateTime();
 		scene.updateUI();
 		scene.repaint();
+	}
+	
+	public void updateTime() {
+		timeSim.update();
+		pScore.getDateField().setText(timeSim.getDate());
+		pScore.getHourField().setText(timeSim.getTime());
 	}
 
 	@Override

@@ -37,7 +37,6 @@ public class Simulation {
 	
 	public void simulationNextTurn() {
 		// TODO the next turn of the simulation
-		
 		simulationNumberOfTurn++;
 	}
 }

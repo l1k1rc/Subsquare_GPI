@@ -20,6 +20,8 @@ public class PanelScore extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	private JLabel prosperityLabel = new JLabel("Prosperity Bar", JLabel.CENTER);
+	private JLabel date = new JLabel("",JLabel.CENTER);
+	private JLabel hour = new JLabel("",JLabel.CENTER);
 	
 	private JPanel timeButton= new JPanel();
 	private JPanel scorePanel = new JPanel();
@@ -48,6 +50,8 @@ public class PanelScore extends JPanel {
 		stop.setBackground(Color.DARK_GRAY);
 		timeButton.add(go);
 		timeButton.add(stop);
+		prosperity.add(date);
+		prosperity.add(hour);
 		prosperity.add(prosperityBar);
 		prosperity.add(prosperityLabel);
 		scorePanel.add(prosperity);
@@ -58,6 +62,14 @@ public class PanelScore extends JPanel {
 	
 	public JProgressBar getProsperityBar() {
 		return prosperityBar;
+	}
+	
+	public JLabel getDateField() {
+		return date;
+	}
+	
+	public JLabel getHourField() {
+		return hour;
 	}
 
 }

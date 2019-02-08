@@ -5,15 +5,15 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class TimeSimulator
-{	
-	private static final int DAY_DURATION = 240;
+{
+	private static TimeSimulator instance = new TimeSimulator();
 	
 	private Calendar calendar;
 	private SimpleDateFormat formatter;
 	
 	private int secondCount = 0;
 		
-	public TimeSimulator() {
+	private TimeSimulator() {
 		calendar = Calendar.getInstance();
 		formatter = new SimpleDateFormat("dd MMMM yyyy",Locale.ENGLISH);
 		init();
@@ -38,7 +38,7 @@ public class TimeSimulator
 	}
 	
 	public String getTime() {
-		return getHour()+":"+getMinute()+":"+getSecond();
+		return getHour()+"h:"+getMinute()+"min";
 	}
 	
 	public String getDay() {
@@ -59,12 +59,12 @@ public class TimeSimulator
 	}
 	
 	public void update() {
-		calendar.add(Calendar.SECOND,1);
-		if((secondCount % DAY_DURATION)==0 && secondCount!=0) {
-			calendar.add(Calendar.DAY_OF_WEEK,1);
-			init();
-		}
+		calendar.add(Calendar.MINUTE,10);
 		secondCount++;
+	}
+	
+	public static TimeSimulator getInstance() {
+		return instance;
 	}
 	
 }
