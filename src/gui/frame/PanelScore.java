@@ -29,6 +29,7 @@ public class PanelScore extends JPanel {
 	
 	private JButton stop=new JButton(new ImageIcon("pause.png"));
 	private JButton go=new JButton(new ImageIcon("play.png"));
+	private JButton fast = new JButton(new ImageIcon("fast.png"));
 	
 	private JProgressBar prosperityBar = new JProgressBar();
 	
@@ -48,8 +49,10 @@ public class PanelScore extends JPanel {
 		
 		go.setBackground(Color.DARK_GRAY);
 		stop.setBackground(Color.DARK_GRAY);
+		fast.setBackground(Color.DARK_GRAY);
 		timeButton.add(go);
 		timeButton.add(stop);
+		timeButton.add(fast);
 		prosperity.add(date);
 		prosperity.add(hour);
 		prosperity.add(prosperityBar);

@@ -1,3 +1,5 @@
+
+
 package gui.menu;
 
 import java.awt.Color;
@@ -13,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 import gui.fontElements.Fonts;
 import gui.frame.MainFrame;
@@ -29,9 +32,9 @@ public class PanelMenu extends JPanel {
     private static final long serialVersionUID = 1L;
     private static JFrame frame=new JFrame();
 
-	private JButton b1=new JButton(new ImageIcon(new ImageIcon("startgame3.png").getImage().getScaledInstance(340, 90, Image.SCALE_DEFAULT)));
-    private JButton b3=new JButton("User's manual");
-    private JButton b4=new JButton("Quit");
+	private JButton b1=new JButton("START GAME");
+    private JButton b3=new JButton("USER'S MANUAL");
+    private JButton b4=new JButton("QUIT GAME");
             
     private GridBagConstraints gbc = new GridBagConstraints();
     private JPanel cell1 = new JPanel();
@@ -48,15 +51,41 @@ public class PanelMenu extends JPanel {
         this.img = img;
         
         b1.setPreferredSize(new Dimension(250, 60));
-        b1.setFont(Fonts.getfMenu());
+        b1.setFont(Fonts.getF4());
         b1.setOpaque(false);
-        b1.setBackground(new Color(30, 170, 255, 200));
+        b1.setBackground(Color.RED);
         b1.setBorderPainted(false);
-        
         b3.setPreferredSize(new Dimension(250, 60));
-        b3.setFont(Fonts.getfMenu());
+        b3.setFont(Fonts.getF4());
+        b3.setOpaque(false);
+        b3.setBackground(new Color(30, 170, 255, 60));
+        b3.setBorderPainted(false);
         b4.setPreferredSize(new Dimension(250, 60));
-        b4.setFont(Fonts.getfMenu());
+        b4.setFont(Fonts.getF4());
+        b4.setOpaque(false);
+        b4.setBackground(Color.RED);
+        b4.setBorderPainted(false);
+        
+        int delay=200;
+		ActionListener taskPerformer =new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				if((b1.getBackground()==(Color.RED)) && (b4.getBackground()==(Color.RED))) {
+					b1.setBackground(Color.GREEN);
+					b4.setBackground(Color.GREEN);
+				}
+				else if((b1.getBackground()==(Color.GREEN)) && (b4.getBackground()==(Color.GREEN))) {
+					b1.setBackground(new Color(30, 170, 255, 60));
+					b4.setBackground(new Color(30, 170, 255, 60));
+				}
+				else {
+					b1.setBackground(Color.RED);
+					b4.setBackground(Color.RED);
+				}
+				repaint();
+			}
+		};
+		Timer t1 = new Timer(delay, taskPerformer);
+		t1.start();
         //---------------------------------------------------------
        
         cell1.setBackground(Color.white);
@@ -144,6 +173,5 @@ public class PanelMenu extends JPanel {
 		frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         frame.setResizable(false);  
-        
     }
 }
