@@ -1,4 +1,4 @@
-package test;
+package tests;
 
 import engine.GridBuilder;
 import engine.GridParameters;
