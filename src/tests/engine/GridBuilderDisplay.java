@@ -1,10 +1,10 @@
-package tests;
+package tests.engine;
 
 import engine.GridBuilder;
 import engine.GridParameters;
 import grid.Grid;
 
-public class gridBuilderTest {
+public class GridBuilderDisplay {
 	
 	public static void main(String[] args) {
 		
