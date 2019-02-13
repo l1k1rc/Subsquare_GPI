@@ -45,6 +45,8 @@ public class Grid {
 		return boxs[abscisse][ordonne];
 	}
 	
+	
+	
 	/**
 	 * set the Box.
 	 * @param abscisse

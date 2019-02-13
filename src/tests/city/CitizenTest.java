@@ -7,7 +7,11 @@ import org.junit.jupiter.api.Test;
 
 import city.Citizen;
 import used.Point;
-
+/**
+ * Training testU for Citizen
+ * @author Raphaël
+ *
+ */
 class CitizenTest {
 	private static Point pos;
 	private static Citizen ctz;
