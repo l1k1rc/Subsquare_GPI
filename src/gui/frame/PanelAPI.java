@@ -1,9 +1,17 @@
 package gui.frame;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,8 +28,8 @@ public class PanelAPI extends JPanel {
 	public PanelAPI() {
 		super();
 		
-		JButton[] tabButtonAPI= {new JButton(new ImageIcon("resid_icon.png")),new JButton(new ImageIcon("commercial_icon.png")),new JButton(new ImageIcon("gdp.png")),new JButton(new ImageIcon("hid.png")),new JButton(new ImageIcon("hehe.png")),
-				new JButton(new ImageIcon("zoomin.png")), new JButton(new ImageIcon("zoomless.png")) };
+		JButton[] tabButtonAPI= {new JButton(new ImageIcon("resid_icon.png")),new JButton(new ImageIcon("commercial_icon.png")),new JButton(new ImageIcon("gdp.png")),new JButton(new ImageIcon("hid.png")),new JButton(new ImageIcon("population.png")),
+				new JButton(new ImageIcon("ageMoyen.png")), new JButton(new ImageIcon("rechDepense.png")) };
 		
 		JPanel[] tabCells= { new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(),new JPanel(),
 				new JPanel(),new JPanel(),new JPanel(),new JPanel(),new JPanel(),new JPanel(),new JPanel(),new JPanel(),new JPanel(),new JPanel()};
@@ -51,5 +59,23 @@ public class PanelAPI extends JPanel {
 			tabButtonAPI[index].setBackground(Color.DARK_GRAY);
 		}
 		tabButtonAPI[0].setToolTipText("TODO");
+		tabButtonAPI[0].addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				//use variable to action the mouse listener, if this one is true, when the user click, the clicklistener is launched
+				//the mouse is changed to notificate this
+				//at the end, the var is false
+				
+				/* Method to change the icon to notify the user he's building a new place */
+				MainFrame.getScene().setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+						new ImageIcon("click_build_house.png").getImage(),
+						new Point(0,0),"custom cursor"));
+			}
+		});
+		
 	}
+
+
 }
