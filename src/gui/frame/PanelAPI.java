@@ -1,3 +1,4 @@
+
 package gui.frame;
 
 import java.awt.Color;
@@ -19,7 +20,7 @@ public class PanelAPI extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	private static boolean buildPublicDistrict= false;
+	private static boolean buildPublicDistrict = false;
 	private GridBagConstraints gbc = new GridBagConstraints();
 
 	public PanelAPI() {
@@ -27,8 +28,8 @@ public class PanelAPI extends JPanel {
 
 		JButton[] tabButtonAPI = { new JButton(new ImageIcon("resid_icon.png")),
 				new JButton(new ImageIcon("commercial_icon.png")), new JButton(new ImageIcon("gdp.png")),
-				new JButton(new ImageIcon("hid.png")), new JButton(new ImageIcon("population.png")),
-				new JButton(new ImageIcon("ageMoyen.png")), new JButton(new ImageIcon("rechDepense.png")) };
+				new JButton(new ImageIcon("subicon.png")), new JButton(new ImageIcon("railicon.png")),
+				new JButton(new ImageIcon("zoomin.png")), new JButton(new ImageIcon("zoomless.png")) };
 
 		JPanel[] tabCells = { new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(),
 				new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(),
@@ -71,14 +72,13 @@ public class PanelAPI extends JPanel {
 				// click, the clicklistener is launched
 				// the mouse is changed to notificate this
 				// at the end, the var is false
-				buildPublicDistrict=true;
-				System.out.println("Value"+buildPublicDistrict);
+				buildPublicDistrict = true;
+				System.out.println("Value" + buildPublicDistrict);
 				/* Method to change the icon to notify the user he's building a new place */
 				MainFrame.getScene().setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
 						new ImageIcon("click_build_house.png").getImage(), new Point(0, 0), "custom cursor"));
 			}
 		});
-
 	}
 
 }
