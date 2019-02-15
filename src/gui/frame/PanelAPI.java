@@ -27,7 +27,7 @@ public class PanelAPI extends JPanel {
 		super();
 
 		JButton[] tabButtonAPI = { new JButton(new ImageIcon("resid_icon.png")),
-				new JButton(new ImageIcon("commercial_icon.png")), new JButton(new ImageIcon("gdp.png")),
+				new JButton(new ImageIcon("commercial_icon.png")), new JButton(new ImageIcon("townhall_icon.png")),
 				new JButton(new ImageIcon("subicon.png")), new JButton(new ImageIcon("railicon.png")),
 				new JButton(new ImageIcon("zoomin.png")), new JButton(new ImageIcon("zoomless.png")) };
 
@@ -80,5 +80,4 @@ public class PanelAPI extends JPanel {
 			}
 		});
 	}
-
 }
