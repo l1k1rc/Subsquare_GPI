@@ -52,5 +52,4 @@ public class Obstacle extends Ground{
 	public boolean isLake() {
 		return false;
 	}
-	
 }

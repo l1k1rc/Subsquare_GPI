@@ -16,7 +16,6 @@ public class PanelAPI extends JPanel {
 	private static final long serialVersionUID = 1L;
 
     private GridBagConstraints gbc = new GridBagConstraints();
-
 	
 	public PanelAPI() {
 		super();
@@ -52,9 +51,5 @@ public class PanelAPI extends JPanel {
 			tabButtonAPI[index].setBackground(Color.DARK_GRAY);
 		}
 		tabButtonAPI[0].setToolTipText("TODO");
-
-		
 	}
-
-
 }

@@ -76,4 +76,8 @@ public class GridBuilder {
 			grid.setBoxAtFree(x, y, false);
 		}	
 	}
+	
+	public void creatLake() {
+		
+	}
 }

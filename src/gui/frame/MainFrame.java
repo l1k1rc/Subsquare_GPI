@@ -23,13 +23,13 @@ import engine.TimeSimulator;
 public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListener{
 
 	private static final long serialVersionUID = 1L;
-	private static final int THREAD_MAP = 1000;
+	private static int THREAD_MAP = GridParameters.speed;
 	private Simulation simulation;
 	private TimeSimulator timeSim;
 	private Scene scene = new Scene();
 	private PanelScore pScore = new PanelScore();
 	private PanelAPI api = new PanelAPI();
-	private boolean stop = true;
+	private static boolean stop = true;
 	
 	private JMenuBar menuBar = new JMenuBar();
 	private JMenu menu_game = new JMenu("Game");
@@ -165,15 +165,25 @@ public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListe
 
 	@Override
 	public void run() {
-		while(!stop) {	
+		while(true) {	
 			// TODO simulation method new turn
-			simulation.simulationNextTurn();
-			updateGUI();
-			try {
-				Thread.sleep(THREAD_MAP);
-			}catch(Exception e) {
-				e.printStackTrace();
+			if(!stop) {
+				simulation.simulationNextTurn();
+				updateGUI();
+				try {
+					Thread.sleep(THREAD_MAP);
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
 			}
 		}	
+	}
+	
+	public static void setThreadSpeed(int thread) {
+		MainFrame.THREAD_MAP=thread;
+	}
+	
+	public static void setStop(boolean stop) {
+		MainFrame.stop=stop;
 	}
 }

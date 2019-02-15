@@ -11,6 +11,8 @@ public class GridParameters {
 	/**********		constants		**********/
 	public static int HEIGHT=22;
 	public static int WIDTH=43;
+	public static int DIMENSION=5;
+	public static int speed=800;
 	
 	/**********		attributs		**********/
 	private int freqObstacle;
@@ -66,5 +68,9 @@ public class GridParameters {
 	public void setAll(int freqObstacle,String ground) {
 		this.freqObstacle = freqObstacle;
 		this.ground = ground;
+	}
+	
+	public static void setSpeed(int speed) {
+		GridParameters.speed=speed;
 	}
 }

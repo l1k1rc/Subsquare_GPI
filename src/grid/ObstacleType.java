@@ -27,11 +27,6 @@ public enum ObstacleType {
 		public String toString() {
 	        return "Obstacle3";
 	    }
-	}
-	, Obstacle4{
-		public String toString() {
-	        return "Obstacle4";
-	    }
 	};
 	
 	private static final List<ObstacleType> VALUES = Collections.unmodifiableList(Arrays.asList(values()));
@@ -51,20 +46,17 @@ public enum ObstacleType {
 			  	if(GridParameters.getInstance().getGround().equals("Grass")) {
 			  		arr[0] = "Barrel";
 				  	arr[1] = "Box";
-				  	arr[2] = "Lake";
-				  	arr[3] = "Wood";
+				  	arr[2] = "Wood";
 			  	}
 			  	else if(GridParameters.getInstance().getGround().equals("Snow")) {
 			  		arr[0] = "Rock";
 			  		arr[1] = "Iceberg";
 			  		arr[2] = "Fir";
-			  		arr[3] = "Snowman";
 			  	}
 			  	else {
 			  		arr[0] = "Stone";
 					arr[1] = "cactus";
-					arr[2] = "Hole";
-					arr[3] = "Rock";
+					arr[2] = "Rock";
 			  	}
 			  return arr;
 		  }

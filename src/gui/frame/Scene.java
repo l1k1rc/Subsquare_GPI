@@ -68,5 +68,3 @@ public class Scene extends JPanel{
 		this.grid=grid;
 	}
 }
-
-
