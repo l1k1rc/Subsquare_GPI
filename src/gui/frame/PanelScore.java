@@ -4,8 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -15,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
 
-import engine.GridParameters;
 import gui.fontElements.Fonts;
 
 public class PanelScore extends JPanel {
@@ -30,9 +27,9 @@ public class PanelScore extends JPanel {
 	private JPanel scorePanel = new JPanel();
 	private JPanel prosperity = new JPanel();
 	
-	private JButton stop=new JButton(new ImageIcon("pause.png"));
-	private JButton go=new JButton(new ImageIcon("play.png"));
-	private JButton fast = new JButton(new ImageIcon("fast.png"));
+	public static JButton stop=new JButton(new ImageIcon("pause.png"));
+	public static JButton go=new JButton(new ImageIcon("play.png"));
+	public static JButton fast = new JButton(new ImageIcon("fast.png"));
 	
 	private JProgressBar prosperityBar = new JProgressBar();
 	
@@ -61,30 +58,6 @@ public class PanelScore extends JPanel {
 		prosperity.add(prosperityBar);
 		prosperity.add(prosperityLabel);
 		scorePanel.add(prosperity);
-		
-		fast.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent event) {
-				if(GridParameters.speed>50) {
-					GridParameters.setSpeed(GridParameters.speed-50);
-					MainFrame.setThreadSpeed(GridParameters.speed);
-				}
-			}
-		});
-		
-		go.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				MainFrame.setStop(false);
-			}
-		});
-		
-		stop.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				MainFrame.setStop(true);
-			}
-		});
 		
 		add(timeButton, BorderLayout.NORTH);
 		add(scorePanel, BorderLayout.CENTER);
