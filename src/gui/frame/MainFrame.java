@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 
 import engine.GridParameters;
 import engine.Simulation;
@@ -26,7 +27,7 @@ public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListe
 	private static int THREAD_MAP = GridParameters.speed;
 	private Simulation simulation;
 	private TimeSimulator timeSim;
-	private Scene scene = new Scene();
+	private static Scene scene = new Scene();
 	private PanelScore pScore = new PanelScore();
 	private PanelAPI api = new PanelAPI();
 	private static boolean stop = true;
@@ -185,5 +186,8 @@ public class MainFrame extends JFrame implements Runnable,MouseListener,KeyListe
 	
 	public static void setStop(boolean stop) {
 		MainFrame.stop=stop;
+	}
+	public static JPanel getScene() {
+		return scene;
 	}
 }
