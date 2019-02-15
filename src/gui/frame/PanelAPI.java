@@ -20,7 +20,7 @@ public class PanelAPI extends JPanel {
 	public PanelAPI() {
 		super();
 		
-		JButton[] tabButtonAPI= {new JButton(new ImageIcon("resid_icon.png")),new JButton(new ImageIcon("commercial_icon.png")),new JButton(new ImageIcon("gdp.png")),new JButton(new ImageIcon("hid.png")),new JButton(new ImageIcon("hehe.png")),
+		JButton[] tabButtonAPI= {new JButton(new ImageIcon("resid_icon.png")),new JButton(new ImageIcon("commercial_icon.png")),new JButton(new ImageIcon("gdp.png")),new JButton(new ImageIcon("subicon.png")),new JButton(new ImageIcon("railicon.png")),
 				new JButton(new ImageIcon("zoomin.png")), new JButton(new ImageIcon("zoomless.png")) };
 		
 		JPanel[] tabCells= { new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(),new JPanel(),
