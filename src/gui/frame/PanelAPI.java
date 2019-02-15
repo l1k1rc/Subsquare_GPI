@@ -76,7 +76,7 @@ public class PanelAPI extends JPanel {
 				System.out.println("Value" + buildPublicDistrict);
 				/* Method to change the icon to notify the user he's building a new place */
 				MainFrame.getScene().setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
-						new ImageIcon("click_build_house.png").getImage(), new Point(0, 0), "custom cursor"));
+						new ImageIcon(getClass().getResource("/images/cursor/click_build_house.png")).getImage(), new Point(0, 0), "custom cursor"));
 			}
 		});
 	}
