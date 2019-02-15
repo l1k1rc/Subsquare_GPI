@@ -16,12 +16,12 @@ class DistrictLevelUpTest {
 	
 
 	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
+	/*static void setUpBeforeClass() throws Exception {
 		DistrictLevelUpMock lduMock = new DistrictLevelUpMock();
 		districtTest1 = lduMock.DistrictLevel1();
 		districtTest2 = lduMock.DistrictLevel2();
 		districtTest3 = lduMock.DistrictLevel3();
-	}
+	}*/
 
 	@Test
 	void districtUpper() {

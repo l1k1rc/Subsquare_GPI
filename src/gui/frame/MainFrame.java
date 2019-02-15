@@ -1,6 +1,7 @@
 package gui.frame;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -163,5 +164,8 @@ public class MainFrame extends JFrame implements Runnable{
 	}
 	public static JPanel getScene() {
 		return scene;
+	}
+	public static void setCursorOnScene(Cursor c) {
+		scene.setCursor(c);
 	}
 }

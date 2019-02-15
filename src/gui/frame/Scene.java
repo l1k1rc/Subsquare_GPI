@@ -64,30 +64,32 @@ public class Scene extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
-				Point p = new Point(e.getX() / 28, e.getY() / 28); // to know the exact position
-				// dans grid, set ll'objet = la box, à quartier, etc
-				grid.setBox(p.getOrdonne(), p.getAbscisse(), BoxFactory.creatWall(p.getOrdonne(), p.getAbscisse()));
-				grid.setBox(p.getOrdonne() + 1, p.getAbscisse() + 1,
-						BoxFactory.creatWall(p.getOrdonne() + 1, p.getAbscisse() + 1));
-				grid.setBox(p.getOrdonne() - 1, p.getAbscisse() - 1,
-						BoxFactory.creatWall(p.getOrdonne() - 1, p.getAbscisse() - 1));
-				grid.setBox(p.getOrdonne() + 1, p.getAbscisse() - 1,
-						BoxFactory.creatWall(p.getOrdonne() + 1, p.getAbscisse() - 1));
-				grid.setBox(p.getOrdonne() - 1, p.getAbscisse() + 1,
-						BoxFactory.creatWall(p.getOrdonne() - 1, p.getAbscisse() + 1));
-				grid.setBox(p.getOrdonne(), p.getAbscisse() + 1,
-						BoxFactory.creatWall(p.getOrdonne(), p.getAbscisse() + 1));
-				grid.setBox(p.getOrdonne() - 1, p.getAbscisse(),
-						BoxFactory.creatWall(p.getOrdonne() - 1, p.getAbscisse()));
-				grid.setBox(p.getOrdonne() + 1, p.getAbscisse(),
-						BoxFactory.creatWall(p.getOrdonne() + 1, p.getAbscisse()));
-				grid.setBox(p.getOrdonne(), p.getAbscisse() - 1,
-						BoxFactory.creatWall(p.getOrdonne(), p.getAbscisse() - 1));
-
-				// System.out.println("Mouse clicked. x = " + e.getX() + " y = " + e.getY());
-				// drawGround(new Point(e.getX(), e.getY()), g2,box);
-				System.out.println(p);
-
+				if(PanelAPI.getbuildPublicDistrict()) {
+					Point p = new Point(e.getX() / 28, e.getY() / 28); // to know the exact position
+					// dans grid, set ll'objet = la box, à quartier, etc
+					grid.setBox(p.getOrdonne(), p.getAbscisse(), BoxFactory.creatWall(p.getOrdonne(), p.getAbscisse()));
+					grid.setBox(p.getOrdonne() + 1, p.getAbscisse() + 1,
+							BoxFactory.creatWall(p.getOrdonne() + 1, p.getAbscisse() + 1));
+					grid.setBox(p.getOrdonne() - 1, p.getAbscisse() - 1,
+							BoxFactory.creatWall(p.getOrdonne() - 1, p.getAbscisse() - 1));
+					grid.setBox(p.getOrdonne() + 1, p.getAbscisse() - 1,
+							BoxFactory.creatWall(p.getOrdonne() + 1, p.getAbscisse() - 1));
+					grid.setBox(p.getOrdonne() - 1, p.getAbscisse() + 1,
+							BoxFactory.creatWall(p.getOrdonne() - 1, p.getAbscisse() + 1));
+					grid.setBox(p.getOrdonne(), p.getAbscisse() + 1,
+							BoxFactory.creatWall(p.getOrdonne(), p.getAbscisse() + 1));
+					grid.setBox(p.getOrdonne() - 1, p.getAbscisse(),
+							BoxFactory.creatWall(p.getOrdonne() - 1, p.getAbscisse()));
+					grid.setBox(p.getOrdonne() + 1, p.getAbscisse(),
+							BoxFactory.creatWall(p.getOrdonne() + 1, p.getAbscisse()));
+					grid.setBox(p.getOrdonne(), p.getAbscisse() - 1,
+							BoxFactory.creatWall(p.getOrdonne(), p.getAbscisse() - 1));
+	
+					// System.out.println("Mouse clicked. x = " + e.getX() + " y = " + e.getY());
+					// drawGround(new Point(e.getX(), e.getY()), g2,box);
+					System.out.println(p);
+					PanelAPI.setbuildPublicDistrict(false);
+				}
 			}
 		});
 	}
