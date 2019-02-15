@@ -1,6 +1,7 @@
 package gui.frame;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -27,6 +28,7 @@ public class Scene extends JPanel {
 
 	public Scene() {
 		super();
+		setPreferredSize(new Dimension(GridParameters.WIDTH*28,GridParameters.HEIGHT*28));
 		setBorder(BorderFactory.createEtchedBorder());
 		setBackground(Color.DARK_GRAY);
 		addMouseListener(new MouseListener() {
