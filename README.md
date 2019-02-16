@@ -1,10 +1,10 @@
-#Subsquare-Project
+# Subsquare Project
 A mini subway line simulation game software
 
-#University
+# University
 Cergy Pontoise 2018/2019
 
-#Members-of-the-team
+# Members of the team
 MOE(1)
 ```
 	AYAD Ishak
@@ -18,6 +18,7 @@ RVR
 	CASTELAIN Julien
 ```
 MOA
+```
 	DUCROUX Guillaume
 ```
 MOE(2)
@@ -29,7 +30,7 @@ CHEF
 	SAINT-AMAND Matthieu
 ```
 ##getting started
-###installing
+###download
 To download the project
 ```
 	git clone https://github.com/l1k1rc/Subsquare_GPI
