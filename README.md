@@ -35,7 +35,7 @@ To download the project
 ```
 	git clone https://github.com/l1k1rc/Subsquare_GPI
 ```
-Then go to tou development environment (IDE)
+Then go to your development environment (IDE)
 ```
 	Eclipse, NetBeans..
 ```
