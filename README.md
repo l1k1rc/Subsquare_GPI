@@ -1,13 +1,44 @@
-Subsquare Project
-	A mini subway line simulation game software
+#Subsquare Project
+A mini subway line simulation game software
 
-University of Cergy Pontoise 2018/2019
+#University
+Cergy Pontoise 2018/2019
 
-Members of the team:
-	(AYAD Ishak,
-	BARRASSET Raphaë,
-	CASTELAIN Julien,
-	DUCROUX Guillaume,
-	HACHOUD Rassem,
-	SAINT-AMAND Matthieu)
-	
+#Members of the team
+MOE(1)
+```
+	AYAD Ishak
+```
+QI
+```
+	BARRASSET Raphaë
+```
+RVR
+```
+	CASTELAIN Julien
+```
+MOA
+	DUCROUX Guillaume
+```
+MOE(2)
+```
+	HACHOUD Rassem
+```
+CHEF
+```
+	SAINT-AMAND Matthieu
+```
+##getting started
+###installing
+To download the project
+```
+	git clone https://github.com/l1k1rc/Subsquare_GPI
+```
+Then go to tou development environment (IDE)
+```
+	Eclipse, NetBeans..
+```
+To run the project execute
+```
+	/src/gui/menu/LauncherMenu.java
+```
