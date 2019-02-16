@@ -29,8 +29,8 @@ CHEF
 ```
 	SAINT-AMAND Matthieu
 ```
-##getting started
-###download
+## getting started
+### download
 To download the project
 ```
 	git clone https://github.com/l1k1rc/Subsquare_GPI
