@@ -108,7 +108,7 @@ public class MainFrame extends JFrame implements Runnable{
 		PanelScore.fast.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				if(GridParameters.speed>50) {
+				if(GridParameters.speed>0) {
 					GridParameters.setSpeed(GridParameters.speed-50);
 					THREAD_MAP=GridParameters.speed;
 				}
