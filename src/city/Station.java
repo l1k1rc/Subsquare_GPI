@@ -8,8 +8,7 @@ public class Station {
 	private int maxCapacity;
 	private String name;
 	
-	public Station(ArrayList<SubwayLine> subwayLines, int level, int maxCapacity, String name) {
-		this.subwayLines = subwayLines;
+	public Station(int level, int maxCapacity, String name) {
 		this.level = level;
 		this.maxCapacity = maxCapacity;
 		this.name=name;

@@ -2,6 +2,7 @@
 package gui.frame;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -75,9 +76,16 @@ public class PanelAPI extends JPanel {
 				buildPublicDistrict = true;
 				System.out.println("Value" + buildPublicDistrict);
 				/* Method to change the icon to notify the user he's building a new place */
-				MainFrame.getScene().setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+
+				MainFrame.setCursorOnScene(Toolkit.getDefaultToolkit().createCustomCursor(
 						new ImageIcon(getClass().getResource("/images/cursor/click_build_house.png")).getImage(), new Point(0, 0), "custom cursor"));
 			}
 		});
+	}
+	public static boolean getbuildPublicDistrict() {
+		return buildPublicDistrict;
+	}
+	public static void setbuildPublicDistrict(boolean b) {
+		buildPublicDistrict= b;
 	}
 }

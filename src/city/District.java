@@ -12,15 +12,19 @@ public class District {
 	private int level;
 	private Point position;
 	
-	public District(String name, Station station, int density, float prosperity, double maintenanceCost, String type, int level, Point position) {
+	public District(String name, Station station, int density, float prosperity, double maintenanceCost, String type,int level, Point position) {
 		this.name = name;
 		this.station = station;
 		this.density = density;
 		this.prosperity = prosperity;
 		this.maintenanceCost = maintenanceCost;
 		this.type = type;
-		this.level = level;
+		this.level= level;
 		this.position = position;
+	}
+	
+	public District(String name, Station station, int density, float prosperity, double maintenanceCost, String type, Point position) {
+		this(name,station,density, prosperity,maintenanceCost,type,1, position);
 	}
 	
 	public String getName() {

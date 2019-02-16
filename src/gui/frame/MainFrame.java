@@ -1,6 +1,7 @@
 package gui.frame;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,6 +11,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import engine.GridParameters;
 import engine.Simulation;
@@ -60,7 +62,10 @@ public class MainFrame extends JFrame implements Runnable{
 		setSize(1400,760);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
-		
+		JScrollPane scrollPane = new JScrollPane(scene);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setBounds(205, 5, 1185, 600);
 		// TODO initialize your frame here
 		
 		scene.setBounds(205,5,1185,600);
@@ -117,7 +122,7 @@ public class MainFrame extends JFrame implements Runnable{
 		
 		getContentPane().add(api);
 		getContentPane().add(pScore);
-		getContentPane().add(scene);
+		getContentPane().add(scrollPane);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
@@ -159,5 +164,8 @@ public class MainFrame extends JFrame implements Runnable{
 	}
 	public static JPanel getScene() {
 		return scene;
+	}
+	public static void setCursorOnScene(Cursor c) {
+		scene.setCursor(c);
 	}
 }
