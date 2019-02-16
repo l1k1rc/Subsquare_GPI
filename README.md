@@ -1,10 +1,10 @@
-#Subsquare Project
+#Subsquare-Project
 A mini subway line simulation game software
 
 #University
 Cergy Pontoise 2018/2019
 
-#Members of the team
+#Members-of-the-team
 MOE(1)
 ```
 	AYAD Ishak
