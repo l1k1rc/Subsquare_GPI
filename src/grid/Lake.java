@@ -40,4 +40,10 @@ public class Lake extends Ground{
 	public boolean isLake() {
 		return true;
 	}
+
+	@Override
+	public boolean isDistrictBox() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

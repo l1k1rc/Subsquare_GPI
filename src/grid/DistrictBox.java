@@ -3,43 +3,35 @@ package grid;
 import javax.swing.ImageIcon;
 
 /**
- * 
+ * this class specified a Wall type
  * @author ishak
- *
  */
 
-public class Grass extends Ground{
+public class DistrictBox extends Ground{
+
+	/***********		construct		***********/
 	
-	/**********		construct		**********/
-	/**
-	 * creat a new Grass.
-	 * @param abscisse
-	 * @param ordonne
-	 * @param ground
-	 */
-	public Grass(int abscisse, int ordonne, String ground) {
+	public DistrictBox(int abscisse, int ordonne) {
 		super(abscisse, ordonne);
-		ImageIcon img = new ImageIcon(getClass().getResource("/images/terrain/"+ground+".png"));
+		
+		ImageIcon img = new ImageIcon(getClass().getResource("/images/terrain/DistrictBox.png"));
 		image = img.getImage();
 	}
 	
-	/**********		methodes		**********/
+	/***********		methodes		***********/
 				//getters
-	public int getQuantity() {
-		return 0;
-	}
 	
+				//setters
+
 				//others
 	@Override
 	public boolean isGrass() {
-		return true;
-	}
-
-	@Override
-	public boolean isWall() {
 		return false;
 	}
-
+	@Override
+	public boolean isWall() {
+		return true;
+	}
 	@Override
 	public boolean isObstacle() {
 		return false;
@@ -53,6 +45,6 @@ public class Grass extends Ground{
 	@Override
 	public boolean isDistrictBox() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 }

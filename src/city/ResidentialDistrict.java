@@ -8,6 +8,12 @@ public class ResidentialDistrict extends District{
 	private int nbCitizens;
 	private ArrayList<Citizen> citizens;
 	
+	public ResidentialDistrict(Point position) {
+		super(position);
+		citizens=new ArrayList<Citizen>();
+		nbCitizens = 0;
+	}
+	
 	public ResidentialDistrict(String name, Station station, int density, float prosperity, double maintenanceCost,String type, int level, Point position, int nbCitizens) {
 		super(name, station, density, prosperity, maintenanceCost, type, level, position);
 		this.nbCitizens=nbCitizens;

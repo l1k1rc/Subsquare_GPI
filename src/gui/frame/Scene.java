@@ -31,67 +31,6 @@ public class Scene extends JPanel {
 		setPreferredSize(new Dimension(GridParameters.WIDTH*28,GridParameters.HEIGHT*28));
 		setBorder(BorderFactory.createEtchedBorder());
 		setBackground(Color.DARK_GRAY);
-		addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				System.out.println("Mouse entered. x = " + e.getX() + " y = " + e.getY());
-			}
-
-			/*
-			 * Method to use when the user wants to interact with the map, that is to say,
-			 * build a place, a line ...
-			 */
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				if(PanelAPI.getbuildPublicDistrict()) {
-					Point p = new Point(e.getX() / 28, e.getY() / 28); // to know the exact position
-					// dans grid, set ll'objet = la box, à quartier, etc
-					grid.setBox(p.getOrdonne(), p.getAbscisse(), BoxFactory.creatWall(p.getOrdonne(), p.getAbscisse()));
-					grid.setBox(p.getOrdonne() + 1, p.getAbscisse() + 1,
-							BoxFactory.creatWall(p.getOrdonne() + 1, p.getAbscisse() + 1));
-					grid.setBox(p.getOrdonne() - 1, p.getAbscisse() - 1,
-							BoxFactory.creatWall(p.getOrdonne() - 1, p.getAbscisse() - 1));
-					grid.setBox(p.getOrdonne() + 1, p.getAbscisse() - 1,
-							BoxFactory.creatWall(p.getOrdonne() + 1, p.getAbscisse() - 1));
-					grid.setBox(p.getOrdonne() - 1, p.getAbscisse() + 1,
-							BoxFactory.creatWall(p.getOrdonne() - 1, p.getAbscisse() + 1));
-					grid.setBox(p.getOrdonne(), p.getAbscisse() + 1,
-							BoxFactory.creatWall(p.getOrdonne(), p.getAbscisse() + 1));
-					grid.setBox(p.getOrdonne() - 1, p.getAbscisse(),
-							BoxFactory.creatWall(p.getOrdonne() - 1, p.getAbscisse()));
-					grid.setBox(p.getOrdonne() + 1, p.getAbscisse(),
-							BoxFactory.creatWall(p.getOrdonne() + 1, p.getAbscisse()));
-					grid.setBox(p.getOrdonne(), p.getAbscisse() - 1,
-							BoxFactory.creatWall(p.getOrdonne(), p.getAbscisse() - 1));
-	
-					// System.out.println("Mouse clicked. x = " + e.getX() + " y = " + e.getY());
-					// drawGround(new Point(e.getX(), e.getY()), g2,box);
-					System.out.println(p);
-					PanelAPI.setbuildPublicDistrict(false);
-				}
-			}
-		});
 	}
 
 	@Override

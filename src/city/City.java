@@ -14,6 +14,10 @@ public class City {
 		this.budget = budget;
 		this.date = date;
 	}
+	
+	public void addDistrict(District d) {
+		districts.add(d);
+	}
 
 	public String getName() {
 		return name;

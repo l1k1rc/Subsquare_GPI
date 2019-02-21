@@ -2,7 +2,8 @@ package city;
 
 import used.Point;
 
-public class District {
+public class District
+{
 	private String name;
 	private Station station;
 	private int density;
@@ -25,6 +26,15 @@ public class District {
 	
 	public District(String name, Station station, int density, float prosperity, double maintenanceCost, String type, Point position) {
 		this(name,station,density, prosperity,maintenanceCost,type,1, position);
+	}
+	
+	public District(Point position) {
+		this.position = position;
+		density = 0;
+		prosperity = 0;
+		maintenanceCost = 0;
+		level = 0;
+		station = null;
 	}
 	
 	public String getName() {

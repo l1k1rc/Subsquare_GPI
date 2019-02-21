@@ -2,10 +2,15 @@ package city;
 
 import used.Point;
 
-public class PirivateDistrict extends District{
+public class PrivateDistrict extends District{
 	private int nbWorkers;
 	
-	public PirivateDistrict(String name, Station station, int density, float prosperity, double maintenanceCost,String type, int level, Point position, int nbWorkers) {
+	public PrivateDistrict(Point position) {
+		super(position);
+		nbWorkers = 0;
+	}
+	
+	public PrivateDistrict(String name, Station station, int density, float prosperity, double maintenanceCost,String type, int level, Point position, int nbWorkers) {
 		super(name, station, density, prosperity, maintenanceCost, type, level, position);
 		this.nbWorkers=nbWorkers;
 	}

@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -16,6 +18,9 @@ import javax.swing.JScrollPane;
 import engine.GridParameters;
 import engine.Simulation;
 import engine.TimeSimulator;
+import grid.BoxFactory;
+import grid.Grid;
+import used.Point;
 
 //import engine.Simulation;
 
@@ -116,6 +121,47 @@ public class MainFrame extends JFrame implements Runnable{
 				if(GridParameters.speed>0) {
 					GridParameters.setSpeed(GridParameters.speed-50);
 					THREAD_MAP=GridParameters.speed;
+				}
+			}
+		});
+		
+		scene.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("Mouse entered. x = " + e.getX() + " y = " + e.getY());
+			}
+
+			/*
+			 * Method to use when the user wants to interact with the map, that is to say,
+			 * build a place, a line ...
+			 */
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				Point position = new Point(e.getX() / 28, e.getY() / 28); // to know the exact position					
+				if(PanelAPI.getbuildPublicDistrict()) {
+					simulation.buildDistrict(position,"pub");
+					PanelAPI.setbuildPublicDistrict(false);
 				}
 			}
 		});

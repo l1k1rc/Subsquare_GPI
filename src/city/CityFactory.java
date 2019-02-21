@@ -29,4 +29,17 @@ public class CityFactory {
 //		logger.info("Citizen creation at : ("+workDistrict+","+originDistrict+","+position.getAbscisse()+","+position.getOrdonne()+")");
 		return new Citizen(workDistrict, originDistrict, position);
 	}
+	
+	public static District createDistrict(Point position,String type) {
+		if(type == "pub") {
+			return new PublicDistrict(position);
+		}
+		if(type == "prv") {
+			return new PrivateDistrict(position);
+		}
+		if(type == "res") {
+			return new ResidentialDistrict(position);
+		}
+		return null;
+	}
 }
