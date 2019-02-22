@@ -18,8 +18,6 @@ import javax.swing.JScrollPane;
 import engine.GridParameters;
 import engine.Simulation;
 import engine.TimeSimulator;
-import grid.BoxFactory;
-import grid.Grid;
 import used.Point;
 
 //import engine.Simulation;
@@ -104,6 +102,8 @@ public class MainFrame extends JFrame implements Runnable{
 				if(stop) {
 					stop=false;
 					launchGUI();
+					GridParameters.setSpeed(800);
+					THREAD_MAP=GridParameters.speed;
 				}
 			}
 		});
