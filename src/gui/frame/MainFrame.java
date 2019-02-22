@@ -162,7 +162,6 @@ public class MainFrame extends JFrame implements Runnable{
 				if(PanelAPI.getbuildPublicDistrict()) {
 					simulation.buildDistrict(position,"pub");
 					PanelAPI.setbuildPublicDistrict(false);
-					//setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					setCursorOnScene(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 				}
 			}
