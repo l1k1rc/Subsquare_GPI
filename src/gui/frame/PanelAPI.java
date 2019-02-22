@@ -75,7 +75,6 @@ public class PanelAPI extends JPanel {
 				// the mouse is changed to notificate this
 				// at the end, the var is false
 				buildPublicDistrict = true;
-				System.out.println("Value" + buildPublicDistrict);
 				/* Method to change the icon to notify the user he's building a new place */
 
 				MainFrame.setCursorOnScene(Toolkit.getDefaultToolkit().createCustomCursor(

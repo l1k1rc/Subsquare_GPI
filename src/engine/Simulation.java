@@ -15,6 +15,7 @@ public class Simulation {
 	private static int simulationNumberOfTurn;
 	
 	public Simulation(GridParameters parameters) {
+		city = new City();
 		this.parameters=parameters;
 		simulationNumberOfTurn=1;
 	}

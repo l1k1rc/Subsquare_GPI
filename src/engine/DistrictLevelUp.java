@@ -17,6 +17,8 @@ public class DistrictLevelUp {
 		if (levelUp < 3) {
 			levelUp++;
 			districtUp.setLevel(levelUp);
+			//Increase maximum inhabitants capacity in district
+			districtUp.determineMaxCapacity();
 		}
 		return districtUp;
 		

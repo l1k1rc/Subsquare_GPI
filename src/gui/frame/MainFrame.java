@@ -2,6 +2,7 @@ package gui.frame;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -18,8 +19,6 @@ import javax.swing.JScrollPane;
 import engine.GridParameters;
 import engine.Simulation;
 import engine.TimeSimulator;
-import grid.BoxFactory;
-import grid.Grid;
 import used.Point;
 
 //import engine.Simulation;
@@ -106,6 +105,8 @@ public class MainFrame extends JFrame implements Runnable{
 				if(stop) {
 					stop=false;
 					launchGUI();
+					GridParameters.setSpeed(800);
+					THREAD_MAP=GridParameters.speed;
 				}
 			}
 		});
@@ -150,7 +151,6 @@ public class MainFrame extends JFrame implements Runnable{
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("Mouse entered. x = " + e.getX() + " y = " + e.getY());
 			}
 
 			/*
@@ -164,6 +164,7 @@ public class MainFrame extends JFrame implements Runnable{
 				if(PanelAPI.getbuildPublicDistrict()) {
 					simulation.buildDistrict(position,"pub");
 					PanelAPI.setbuildPublicDistrict(false);
+					setCursorOnScene(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 				}
 			}
 		});
