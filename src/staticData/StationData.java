@@ -1,7 +1,5 @@
 package staticData;
 
-import java.util.ArrayList;
-
 /**
  * @author raphael
  * This class list all static values about subway station
