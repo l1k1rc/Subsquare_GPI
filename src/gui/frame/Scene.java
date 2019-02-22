@@ -5,8 +5,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -14,7 +12,6 @@ import javax.swing.JPanel;
 
 import engine.GridParameters;
 import grid.Box;
-import grid.BoxFactory;
 import grid.Grid;
 import used.Point;
 
@@ -25,6 +22,8 @@ public class Scene extends JPanel {
 	private ImageIcon pics;
 	private Graphics g2;
 	private Box box;
+	private boolean drawGrid=false;
+	private Point pos_gridPoint;
 
 	public Scene() {
 		super();
@@ -54,6 +53,17 @@ public class Scene extends JPanel {
 				}
 			}
 		}
+		if(drawGrid) {
+			int radius = 2;
+			int x = pos_gridPoint.getAbscisse()-radius;
+			int y = pos_gridPoint.getOrdonne()-radius;
+			
+			for(int i = x; i<x+2*radius+1; i++) {
+				for(int j = y; j<y+2*radius+1; j++) {
+					g2.drawRect(i*28, j*28, 28, 28);
+				}
+			}
+		}
 	}
 
 	// TODO paint all components of the map here with a specifics methods
@@ -72,5 +82,16 @@ public class Scene extends JPanel {
 	public void setGrid(Grid grid) {
 		this.grid = grid;
 	}
-
+	
+	public void setDrawGrid(boolean drawGrid) {
+		this.drawGrid = drawGrid;
+	}
+	
+	public boolean isDrawGrid() {
+		return drawGrid;
+	}
+	
+	public void setPos_gridPoint(Point pos_gridPoint) {
+		this.pos_gridPoint = pos_gridPoint;
+	}
 }
