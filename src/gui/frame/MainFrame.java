@@ -2,11 +2,11 @@ package gui.frame;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -23,7 +23,7 @@ import used.Point;
 
 //import engine.Simulation;
 
-public class MainFrame extends JFrame implements Runnable{
+public class MainFrame extends JFrame implements Runnable {
 
 	private static final long serialVersionUID = 1L;
 	private static int THREAD_MAP = GridParameters.speed;
@@ -34,18 +34,18 @@ public class MainFrame extends JFrame implements Runnable{
 	private PanelPrivStat pStat = new PanelPrivStat();
 	private PanelAPI api = new PanelAPI();
 	private static boolean stop = true;
-	
+
 	private JMenuBar menuBar = new JMenuBar();
 	private JMenu menu_game = new JMenu("Game");
 	private JMenuItem item_save = new JMenuItem("Save");
 	private JMenuItem item_load = new JMenuItem("Load a game");
 	private JMenuItem item_manual = new JMenuItem("User's manual");
 	private JMenuItem item_leave = new JMenuItem("Leave without save");
-	
-	/*********		construct		*********/
+
+	/********* construct *********/
 	public MainFrame() {
 		super("Subsquare");
-		setIconImage(new ImageIcon("subsquare_icon.png").getImage());		
+		setIconImage(new ImageIcon("subsquare_icon.png").getImage());
 		setFocusable(true);
 		simulation = new Simulation(GridParameters.getInstance());
 		simulation.generatGrid();
@@ -54,27 +54,31 @@ public class MainFrame extends JFrame implements Runnable{
 		init();
 		launchGUI();
 	}
-	
-	private void launchGUI(){
-		stop = false;		
+
+	private void launchGUI() {
+		stop = false;
 		Thread chronoThread = new Thread(this);
 		chronoThread.start();
 	}
-	
+
 	public void init() {
 		setResizable(false);
 		getContentPane().setBackground(Color.darkGray);
+<<<<<<< HEAD
 		setSize(1650,760);
+=======
+		setSize(1400, 760);
+>>>>>>> beadbd646cdbd1cf4bffce9bd6a95f8ab0d92474
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 		JScrollPane scrollPane = new JScrollPane(scene);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setBounds(205, 5, 1185, 600);
+		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		scrollPane.setBounds(205, 5, 1185, 600);
 		// TODO initialize your frame here
-		
-		scene.setBounds(205,5,1185,600);
-		api.setBounds(200,610,1200,125);
+
+		scene.setBounds(205, 5, 1185, 600);
+		api.setBounds(200, 610, 1200, 125);
 		pScore.setBounds(0, 0, 200, 1150);
 		pStat.setBounds(1400,0, 250, 1150);
 
@@ -82,70 +86,67 @@ public class MainFrame extends JFrame implements Runnable{
 		this.menu_game.add(item_load);
 		this.menu_game.add(item_manual);
 		this.menu_game.add(item_leave);
-		
-		//Action for leave without save
+
+		// Action for leave without save
 		item_leave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				System.exit(0);
 			}
 		});
-		
+
 		item_manual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new ManualFrame();
 			}
 		});
-		
+
 		this.menuBar.add(menu_game);
 		this.setJMenuBar(menuBar);
-		
+
 		PanelScore.go.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if(stop) {
-					stop=false;
+				if (stop) {
+					stop = false;
 					launchGUI();
 					GridParameters.setSpeed(800);
-					THREAD_MAP=GridParameters.speed;
+					THREAD_MAP = GridParameters.speed;
 				}
 			}
 		});
-		
+
 		PanelScore.stop.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				stop=true;
+				stop = true;
 			}
 		});
-		
+
 		PanelScore.fast.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				if(GridParameters.speed>0) {
-					GridParameters.setSpeed(GridParameters.speed-50);
-					THREAD_MAP=GridParameters.speed;
+				if (GridParameters.speed > 0) {
+					GridParameters.setSpeed(GridParameters.speed - 50);
+					THREAD_MAP = GridParameters.speed;
 				}
 			}
 		});
-		
+
 		scene.addMouseListener(new MouseListener() {
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
-
 			}
 
 			@Override
@@ -154,30 +155,49 @@ public class MainFrame extends JFrame implements Runnable{
 			}
 
 			/*
-			 * Method to use when the user wants to interact with the map, that is to say,
+			 * Method to use when the user wa nts to interact with the map, that is to say,
 			 * build a place, a line ...
 			 */
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
-				Point position = new Point(e.getX() / 28, e.getY() / 28); // to know the exact position					
-				if(PanelAPI.getbuildPublicDistrict()) {
-					simulation.buildDistrict(position,"pub");
+				Point position = new Point(e.getX() / 28, e.getY() / 28); // to know the exact position
+				if (PanelAPI.getbuildPublicDistrict()) {
+					simulation.buildDistrict(position, "pub");
 					PanelAPI.setbuildPublicDistrict(false);
 					setCursorOnScene(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+					scene.setDrawGrid(false);
 				}
 			}
 		});
-		
+		scene.addMouseMotionListener(new MouseMotionListener() {
+
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				// TODO Auto-generated method stub
+				Point position = new Point(e.getX() / 28, e.getY() / 28); // to know the exact position			
+				if(PanelAPI.getbuildPublicDistrict()) {
+					scene.setDrawGrid(true);
+					scene.setPos_gridPoint(position);
+				}
+
+			}
+
+			@Override
+			public void mouseDragged(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+		});
 		getContentPane().add(api);
 		getContentPane().add(pScore);
 		getContentPane().add(pStat);
 		getContentPane().add(scrollPane);
-		
+
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 	}
-	
+
 	public void updateGUI() {
 		// TODO repaint method of the scene
 		// TODO check new statistics ..
@@ -185,7 +205,7 @@ public class MainFrame extends JFrame implements Runnable{
 		scene.updateUI();
 		scene.repaint();
 	}
-	
+
 	public void updateTime() {
 		timeSim.update();
 		pScore.getDateField().setText(timeSim.getDate());
@@ -194,27 +214,29 @@ public class MainFrame extends JFrame implements Runnable{
 
 	@Override
 	public void run() {
-		while(!stop) {
+		while (!stop) {
 			simulation.simulationNextTurn();
 			updateGUI();
 			try {
 				Thread.sleep(THREAD_MAP);
-			}catch(Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}	
+		}
 	}
-	
+
 	public static void setThreadSpeed(int thread) {
-		MainFrame.THREAD_MAP=thread;
+		MainFrame.THREAD_MAP = thread;
 	}
-	
+
 	public static void setStop(boolean stop) {
-		MainFrame.stop=stop;
+		MainFrame.stop = stop;
 	}
+
 	public static JPanel getScene() {
 		return scene;
 	}
+
 	public static void setCursorOnScene(Cursor c) {
 		scene.setCursor(c);
 	}
