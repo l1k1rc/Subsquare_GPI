@@ -8,11 +8,8 @@ public class City {
 	private int budget;
 	private Date date;
 	
-	public City(String name, ArrayList<District> districts, int budget, Date date) {
-		this.name = name;
-		this.districts = districts;
-		this.budget = budget;
-		this.date = date;
+	public City() {
+		districts = new ArrayList<District>();
 	}
 	
 	public void addDistrict(District d) {

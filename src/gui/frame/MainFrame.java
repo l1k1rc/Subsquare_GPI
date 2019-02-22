@@ -148,7 +148,6 @@ public class MainFrame extends JFrame implements Runnable{
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("Mouse entered. x = " + e.getX() + " y = " + e.getY());
 			}
 
 			/*
