@@ -22,7 +22,7 @@ public class Simulation {
 	
 	public void buildDistrict(Point center,String type)
 	{
-		int radius = 2;
+		int radius = 1;
 		int x = center.getAbscisse()-radius;
 		int y = center.getOrdonne()-radius;
 		

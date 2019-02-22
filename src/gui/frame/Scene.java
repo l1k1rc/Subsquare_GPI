@@ -54,7 +54,7 @@ public class Scene extends JPanel {
 			}
 		}
 		if(drawGrid) {
-			int radius = 2;
+			int radius = 1;
 			int x = pos_gridPoint.getAbscisse()-radius;
 			int y = pos_gridPoint.getOrdonne()-radius;
 			
@@ -68,15 +68,15 @@ public class Scene extends JPanel {
 
 	// TODO paint all components of the map here with a specifics methods
 	public void drawGround(Point p, Graphics g, Box box) {
-		g.drawImage(box.getGroundType().getImage(), p.getAbscisse() * 28, p.getOrdonne() * 28, null);
+		g.drawImage(box.getGroundType().getImage(), p.getAbscisse() * 10, p.getOrdonne() * 10, null);
 	}
 
 	public void drawObstacle(Point p, Graphics g, Box box) {
 		pics = new ImageIcon(
 				getClass().getResource("/images/terrain/" + GridParameters.getInstance().getGround() + ".png"));
 		Image t = pics.getImage();
-		g.drawImage(t, p.getAbscisse() * 28, p.getOrdonne() * 28, null);
-		g.drawImage(box.getGroundType().getImage(), p.getAbscisse() * 28, p.getOrdonne() * 28, null);
+		g.drawImage(t, p.getAbscisse()*10, p.getOrdonne() * 10, null);
+		g.drawImage(box.getGroundType().getImage(), p.getAbscisse() * 10, p.getOrdonne() * 10, null);
 	}
 
 	public void setGrid(Grid grid) {
