@@ -2,6 +2,7 @@ package gui.frame;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -162,6 +163,8 @@ public class MainFrame extends JFrame implements Runnable{
 				if(PanelAPI.getbuildPublicDistrict()) {
 					simulation.buildDistrict(position,"pub");
 					PanelAPI.setbuildPublicDistrict(false);
+					//setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					//setCursorOnScene(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 				}
 			}
 		});
