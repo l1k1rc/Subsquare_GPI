@@ -1,7 +1,6 @@
 package tests.engine;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -50,9 +49,6 @@ class DistrictLevelUpTest {
 		District districtExp3 = lduMock.DistrictLevel3();
 		//Comp
 		assertEquals("Le district niveau 3 aurait dû rester niveau 3", districtExp3.getLevel(), districtTest3.getLevel());
-
-
-		
 	}
 
 }
