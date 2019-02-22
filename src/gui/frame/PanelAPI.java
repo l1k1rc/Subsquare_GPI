@@ -36,6 +36,7 @@ public class PanelAPI extends JPanel {
 				new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(),
 				new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(),
 				new JPanel(), new JPanel(), new JPanel() };
+		
 
 		setLayout(new GridBagLayout());
 		// ---------------------------Setting and placement of the cells from the
@@ -80,6 +81,25 @@ public class PanelAPI extends JPanel {
 				MainFrame.setCursorOnScene(Toolkit.getDefaultToolkit().createCustomCursor(
 						new ImageIcon(getClass().getResource("/images/cursor/click_build_house.png")).getImage(), new Point(0, 0), "custom cursor"));
 			}
+		});
+		
+		tabButtonAPI[6].setToolTipText("Zoom Less");
+		tabButtonAPI[6].addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				
+				
+				
+				
+				
+				
+				
+				System.out.println("Zoom less");
+			}
+			
 		});
 	}
 	public static boolean getbuildPublicDistrict() {

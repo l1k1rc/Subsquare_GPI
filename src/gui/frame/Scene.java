@@ -68,6 +68,23 @@ public class Scene extends JPanel {
 		g.drawImage(t, p.getAbscisse() * 28, p.getOrdonne() * 28, null);
 		g.drawImage(box.getGroundType().getImage(), p.getAbscisse() * 28, p.getOrdonne() * 28, null);
 	}
+	
+	public void zoomLess(Graphics g) {
+		g2 = (Graphics2D) g;
+		// the dimension of the grid
+		for (int y = 0; y < grid.height-20; y++) {
+			for (int x = 0; x < grid.width-20; x++) {
+				box = grid.getBoxAt(y, x);
+				if (box.getGroundType().isGrass()) {
+					drawGround(new Point(x, y), g2, box);
+				} else if (box.getGroundType().isWall()) {
+					drawGround(new Point(x, y), g2, box);
+				} else if (!box.getIsFree()) {
+					drawObstacle(new Point(x, y), g2, box);
+				}
+			}
+		}
+	}
 
 	public void setGrid(Grid grid) {
 		this.grid = grid;

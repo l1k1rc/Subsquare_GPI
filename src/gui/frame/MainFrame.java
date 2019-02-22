@@ -32,6 +32,7 @@ public class MainFrame extends JFrame implements Runnable{
 	private TimeSimulator timeSim;
 	private static Scene scene = new Scene();
 	private PanelScore pScore = new PanelScore();
+	private PanelPrivStat pStat = new PanelPrivStat();
 	private PanelAPI api = new PanelAPI();
 	private static boolean stop = true;
 	
@@ -64,7 +65,7 @@ public class MainFrame extends JFrame implements Runnable{
 	public void init() {
 		setResizable(false);
 		getContentPane().setBackground(Color.darkGray);
-		setSize(1400,760);
+		setSize(1650,760);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 		JScrollPane scrollPane = new JScrollPane(scene);
@@ -76,6 +77,7 @@ public class MainFrame extends JFrame implements Runnable{
 		scene.setBounds(205,5,1185,600);
 		api.setBounds(200,610,1200,125);
 		pScore.setBounds(0, 0, 200, 1150);
+		pStat.setBounds(1400,0, 250, 1150);
 
 		this.menu_game.add(item_save);
 		this.menu_game.add(item_load);
@@ -168,6 +170,7 @@ public class MainFrame extends JFrame implements Runnable{
 		
 		getContentPane().add(api);
 		getContentPane().add(pScore);
+		getContentPane().add(pStat);
 		getContentPane().add(scrollPane);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -214,4 +217,5 @@ public class MainFrame extends JFrame implements Runnable{
 	public static void setCursorOnScene(Cursor c) {
 		scene.setCursor(c);
 	}
+	
 }
